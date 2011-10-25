@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="config.xsd">
+
+	<name>org.diretto.api.main.core</name>
+	<api-version>v2</api-version>
+
+	<cache>
+		<cache-config-file>org/diretto/api/client/main/core/ehcache.xml</cache-config-file>
+		<cache-name>DocumentCache</cache-name>
+		<cache-activated>true</cache-activated>
+	</cache>
+
+</config>
