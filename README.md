@@ -6,6 +6,23 @@ A Java Client for the diretto Core Service
 
 Please refer to the API documentation: http://diretto.github.com/diretto-api-doc/v2/diretto/core.html
 
+## Getting Started
+
+	URL apiBaseURL = URLTransformationUtils.adjustAPIBaseURL(new URL("<api-base-url>"));
+	
+	SystemSession systemSession = JavaClientManager.INSTANCE.getSystemSession(apiBaseURL, "<system-user-email-address>", "<system-user-password>");
+	JavaClient javaClient = JavaClientManager.INSTANCE.getJavaClient(systemSession);
+	
+	CoreService coreService = javaClient.getCoreService();
+	
+	// Example: Get the Documents of the last 5 days
+	
+	ResultSet<DocumentID, Document> documents = coreService.getDocumentsAfter(new DateTime().minusDays(5));
+	
+	// Example: Get the Storage Service (JavaClientStoragePlugin necessary)
+	
+	StorageService storageService = (StorageService) javaClient.getService(StorageServiceID.INSTANCE);
+
 ## License (not valid for `JavaClient/lib/` and `JavaClient/src/org/diretto/api/client/base/external/`)
 
 	Copyright (c) 2011 Tobias Schlecht, Benjamin Erb
