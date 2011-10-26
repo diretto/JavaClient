@@ -9,8 +9,10 @@ Please refer to the API documentation: http://diretto.github.com/diretto-api-doc
 ## Getting Started
 
 	URL apiBaseURL = URLTransformationUtils.adjustAPIBaseURL(new URL("<api-base-url>"));
+	String emailAddress = "<system-user-email-address>";
+	String password = "<system-user-password>";
 	
-	SystemSession systemSession = JavaClientManager.INSTANCE.getSystemSession(apiBaseURL, "<system-user-email-address>", "<system-user-password>");
+	SystemSession systemSession = JavaClientManager.INSTANCE.getSystemSession(apiBaseURL, emailAddress, password);
 	JavaClient javaClient = JavaClientManager.INSTANCE.getJavaClient(systemSession);
 	
 	CoreService coreService = javaClient.getCoreService();
